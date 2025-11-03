@@ -1,6 +1,6 @@
 ================================================================================
 PHASE 1: COMPLETE ANN PROJECT FOR HOT DEFORMATION BEHAVIOR
-================================================================================
+
 AISI 304 STAINLESS STEEL - FLOW STRESS PREDICTION
 
 Project: Artificial Neural Network for Predicting Hot Deformation Behavior
