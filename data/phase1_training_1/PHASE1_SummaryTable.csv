@@ -1,0 +1,27 @@
+Metric,Value
+Total Samples,60
+Training Samples,42
+Validation Samples,9
+Test Samples,9
+Epochs Trained,500
+R-value (Test),0.997058
+AARE (Test),2.1032%
+R² (Test),0.991164
+MAE (Test),0.011051
+RMSE (Test),0.013830
+Optimizer,Adam (lr=0.01)
+Loss Function,MSE
+Activation (Hidden 1),tanh
+Activation (Hidden 2),linear
+Activation (Output),linear
+Total Scenarios Evaluated,24
+Best Max Stress Scenario,Scenario_3_FixedSR_SR_15
+Best Max Temperature,849.85°C
+Best Max Strain Rate,15.000000 s⁻¹
+Best Max Strain,0.356704
+Best Max Predicted Stress,1.015702
+Best Min Stress Scenario,Scenario_2_FixedTemp_T_1050C
+Best Min Temperature,1050.00°C
+Best Min Strain Rate,0.100200 s⁻¹
+Best Min Strain,0.100067
+Best Min Predicted Stress,0.259837
