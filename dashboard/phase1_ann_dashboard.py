@@ -221,7 +221,7 @@ if page == "🏠 Dashboard Overview":
                 unsafe_allow_html=True)
 
     st.markdown("""
-    <div style='text-align: center; padding: 15px; background-color: #e7f3ff; border-radius: 5px; margin-bottom: 20px;'>
+    <div style='text-align: center; padding: 15px; background-color: #e7f3ff; border-radius: 5px; margin-bottom: 20px; color: black;'>
         <strong>Predicting Flow Stress Behavior of AISI 304 Stainless Steel</strong><br>
         Using Artificial Neural Networks with Backpropagation Optimization
     </div>
@@ -504,7 +504,8 @@ elif page == "📊 EDA - Data Exploration":
 
             # Individual correlations with output
             st.markdown("**Correlations with Output (σ/σₘₐₓ):**")
-            for idx, (col, val) in enumerate(corr_data['Stress_Normalized'].items()[:-1]):
+
+            for col, val in corr_data['Stress_Normalized'].items():
                 if val > 0:
                     st.success(f"{col}: **{val:+.4f}** ✓")
                 else:
@@ -690,7 +691,7 @@ elif page == "📊 EDA - Data Exploration":
             })
 
             st.dataframe(
-                skew_kurt.style.format("{:.4f}"),
+                skew_kurt.round(4),
                 use_container_width=True,
                 hide_index=True
             )
@@ -1037,15 +1038,23 @@ elif page == "🎯 Model Performance":
             # R-value comparison
             fig_r = px.bar(
                 metrics_df[metrics_df['Dataset'] != 'Paper_Baseline'],
-                x='Dataset', y='R_value',
+                x='Dataset',
+                y='R_value',
                 title='R-value Across Datasets',
                 color='Dataset',
                 color_discrete_sequence=['#636EFA', '#EF553B', '#00CC96'],
-                text='R_value',
-                text_format='.4f'
+                text='R_value'  # display values on bars
             )
-            fig_r.add_hline(y=0.99, line_dash="dash", line_color="red",
-                            annotation_text="Target: 0.99")
+
+            # Format the text on bars to 4 decimal places
+            fig_r.update_traces(texttemplate='%{text:.4f}', textposition='outside')
+
+            # Add target line
+            fig_r.add_hline(
+                y=0.99, line_dash="dash", line_color="red",
+                annotation_text="Target: 0.99"
+            )
+
             fig_r.update_layout(height=400, showlegend=False)
             st.plotly_chart(fig_r, use_container_width=True)
 
@@ -1153,7 +1162,7 @@ elif page == "🎯 Model Performance":
             """, unsafe_allow_html=True)
         elif our_r >= 0.99:
             st.markdown("""
-            <div class="success-box">
+            <div class="success-box" style="color: black;">
             <strong>✅ EXCELLENT PERFORMANCE</strong><br>
             Your model is very close to the baseline - excellent results!
             </div>
@@ -1648,6 +1657,6 @@ st.markdown("""
     <p><strong>Phase 1: Complete Analysis Dashboard</strong></p>
     <p>Hot Deformation Behavior - AISI 304 Stainless Steel</p>
     <p>Built with Streamlit + Plotly | TensorFlow/Keras ANN Model</p>
-    <p style='font-size: 0.8rem; color: #666;'>Last Updated: 2024</p>
+    <p style='font-size: 0.8rem; color: #666;'>Last Updated: 2025</p>
 </div>
 """, unsafe_allow_html=True)
