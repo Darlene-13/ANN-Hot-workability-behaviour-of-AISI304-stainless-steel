@@ -54,6 +54,8 @@ st.markdown("""
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        color: black;
+        
     }
     .success-box {
         background-color: #d4edda;
@@ -81,7 +83,7 @@ st.markdown("""
 def load_raw_data():
     """Load raw merged data"""
     try:
-        df = pd.read_excel("merged_input_output_data.xlsx")
+        df = pd.read_excel("/home/darlenewendie/PycharmProjects/ANN-Hot-workability-behaviour-of-AISI304-stainless-steel/data/original_data/merged_input_output_data.xlsx")
 
         # Ensure correct column names
         expected_cols = ['T_inv', 'ln_Strain_Rate', 'Strain', 'Stress_Normalized']
@@ -106,7 +108,7 @@ def load_raw_data():
 def load_predictions():
     """Load predictions from Phase 1"""
     try:
-        return pd.read_excel("data/phase1_training_1/ANN_Predictions_Output.xlsx")
+        return pd.read_excel("/home/darlenewendie/PycharmProjects/ANN-Hot-workability-behaviour-of-AISI304-stainless-steel/data/phase1_training_1/ANN_Predictions_Output.xlsx")
     except Exception as e:
         st.warning(f"⚠️ Could not load predictions: {e}")
         return None
@@ -116,7 +118,7 @@ def load_predictions():
 def load_optimized_inputs():
     """Load optimized inputs from all scenarios"""
     try:
-        return pd.read_excel("data/phase1_training_1/Optimized_Inputs_All_Scenarios.xlsx")
+        return pd.read_excel("/home/darlenewendie/PycharmProjects/ANN-Hot-workability-behaviour-of-AISI304-stainless-steel/data/phase1_training_1/Optimized_Inputs_All_Scenarios.xlsx")
     except Exception as e:
         st.warning(f"⚠️ Could not load optimized inputs: {e}")
         return None
@@ -126,7 +128,7 @@ def load_optimized_inputs():
 def load_performance_metrics():
     """Load performance metrics"""
     try:
-        return pd.read_excel("data/phase1_training_1/Performance_Metrics.xlsx")
+        return pd.read_excel("/home/darlenewendie/PycharmProjects/ANN-Hot-workability-behaviour-of-AISI304-stainless-steel/data/phase1_training_1/Performance_Metrics.xlsx")
     except Exception as e:
         st.warning(f"⚠️ Could not load performance metrics: {e}")
         return None
@@ -859,7 +861,7 @@ elif page == "🧠 Model Training & Architecture":
 
     with col1:
         st.markdown("""
-        <div style='background-color: #e3f2fd; padding: 15px; border-radius: 5px; text-align: center;'>
+        <div style='background-color: #e3f2fd; padding: 15px; border-radius: 5px; text-align: center; color: black;'>
             <h4>1️⃣ Forward Pass</h4>
             <p>Input → Network → Prediction</p>
         </div>
@@ -867,7 +869,7 @@ elif page == "🧠 Model Training & Architecture":
 
     with col2:
         st.markdown("""
-        <div style='background-color: #f3e5f5; padding: 15px; border-radius: 5px; text-align: center;'>
+        <div style='background-color: #f3e5f5; padding: 15px; border-radius: 5px; text-align: center; color: black;'>
             <h4>2️⃣ Error Calculation</h4>
             <p>Error = (ŷ - y)²</p>
         </div>
@@ -875,7 +877,7 @@ elif page == "🧠 Model Training & Architecture":
 
     with col3:
         st.markdown("""
-        <div style='background-color: #fff3e0; padding: 15px; border-radius: 5px; text-align: center;'>
+        <div style='background-color: #fff3e0; padding: 15px; border-radius: 5px; text-align: center; color: black;'>
             <h4>3️⃣ Backpropagation</h4>
             <p>Calculate ∂Loss/∂W</p>
         </div>
@@ -883,7 +885,7 @@ elif page == "🧠 Model Training & Architecture":
 
     with col4:
         st.markdown("""
-        <div style='background-color: #e8f5e9; padding: 15px; border-radius: 5px; text-align: center;'>
+        <div style='background-color: #e8f5e9; padding: 15px; border-radius: 5px; text-align: center; color: black;'>
             <h4>4️⃣ Weight Update</h4>
             <p>W = W - α × ∇L</p>
         </div>
@@ -891,7 +893,7 @@ elif page == "🧠 Model Training & Architecture":
 
     with col5:
         st.markdown("""
-        <div style='background-color: #fce4ec; padding: 15px; border-radius: 5px; text-align: center;'>
+        <div style='background-color: #fce4ec; padding: 15px; border-radius: 5px; text-align: center; color: black;'>
             <h4>5️⃣ Repeat</h4>
             <p>Until convergence</p>
         </div>
@@ -1642,7 +1644,7 @@ elif page == "📈 Comparative Analysis":
 
 st.markdown("---")
 st.markdown("""
-<div style='text-align: center; padding: 20px; background-color: #f0f2f6; border-radius: 5px;'>
+<div style='text-align: center; padding: 20px; background-color: #f0f2f6; border-radius: 5px; color: black;'>
     <p><strong>Phase 1: Complete Analysis Dashboard</strong></p>
     <p>Hot Deformation Behavior - AISI 304 Stainless Steel</p>
     <p>Built with Streamlit + Plotly | TensorFlow/Keras ANN Model</p>
