@@ -1,0 +1,22 @@
+Metric,Value
+Total Samples,60
+Training Samples,42
+Validation Samples,9
+Test Samples,9
+Epochs Trained,51
+R-value (Test),0.997637
+AARE (Test),2.6719%
+R² (Test),0.987075
+MAE (Test),0.013691
+RMSE (Test),0.016727
+Optimizer,Adam (lr=0.01)
+Loss Function,MSE
+Activation (Hidden 1),tanh
+Activation (Hidden 2),linear
+Activation (Output),linear
+Max Stress Temperature,850.39°C
+Max Stress Strain Rate,9.9822 s⁻¹
+Max Stress Strain,0.369747
+Min Stress Temperature,999.84°C
+Min Stress Strain Rate,0.1000 s⁻¹
+Min Stress Strain,0.100010
