@@ -126,7 +126,14 @@ would improve the model's predictive accuracy and generalization capabilities. T
 - Implemented data augmentation techniques to enhance the diversity of the training data.
 
 
-
+### DATA COLUMNS TO BE USED IN ANN
+1. Inverse of Temperature (1/T): 
+- This is required because flow stress follows Arrhenius equation: exp(-Q/RT)
+- The inverse of temperature linearized this relationship
+2. ln(Strain_Rate)
+- Strain rate varies from 0.1 to 0.15 that is a huge range
+- Finding its log makes it range from -2.3 to 2.7 this makes the range manageable
+3. Strain
 
 ### Written by:
 Darlene Wendy Nasimiyu
